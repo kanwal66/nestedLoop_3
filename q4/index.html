@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smallest Column Sum</title>
+</head>
+<body>
+    <script>
+        var arr = [
+            [1, 2, 3],
+            [2, 3, 1],
+            [3, 7, 1],
+        ];
+
+        var rows = arr.length;
+        var cols = arr[0].length;
+
+        var minSum = Infinity;
+        var minCol = 0;
+
+        for (var j = 0; j < cols; j++) {
+            var colSum = 0; 
+            for (var i = 0; i < rows; i++) {
+                colSum += arr[i][j];
+            }
+
+            if (colSum < minSum) {
+                minSum = colSum;
+                minCol = j + 1; 
+            }
+
+       
+        }
+
+        console.log("Column with smallest sum is column " + minCol + " with sum " + minSum);
+    </script>
+</body>
+</html>
