@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maximium rowSum</title>
+</head>
+
+<body>
+    <script>
+        var arr = [
+            [1, 2, 3],
+            [2, 3, 1],
+            [3, 7, 1],
+        ];
+
+        var maxSum = 0;
+        var maxRow = 0;
+
+        for (var i = 0; i < arr.length; i++) {
+            var rowSum = 0;
+            for (var j = 0; j < arr[i].length; j++) {
+                rowSum += arr[i][j];
+            }
+            if (rowSum > maxSum) {
+                maxSum = rowSum;
+                maxRow = i + 1;
+            }
+        }
+
+        console.log("Row with max sum is row " + maxRow + " with sum " + maxSum);
+    </script>
+</body>
+
+</html>
